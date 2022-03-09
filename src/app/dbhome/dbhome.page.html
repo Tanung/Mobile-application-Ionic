@@ -1,0 +1,47 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>ข่าวประชาสัมพันธ์</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-list>
+    <ion-list-header>
+      รายงานข่าว
+    </ion-list-header><br>
+
+    <ion-item-group *ngFor="let tmp of this.newsobj">
+
+
+
+      <ion-item  >
+        <ion-label>
+          <p>
+            <ion-img style="width: 350px; height: 100%; margin: auto;" src="{{tmp.linkimg}}"></ion-img>
+          </p><br>
+
+          <h1>
+            {{tmp.title}}
+          </h1><br>
+
+          <p>
+            {{tmp.detail}}
+          </p>
+
+          <p>
+            {{tmp.linkurl}}
+          </p>
+
+          <ion-item routerLink="/showpage">
+            <ion-label color="success">ดูรายละเอียด</ion-label>
+          </ion-item>
+
+        </ion-label>
+      </ion-item>
+    </ion-item-group>
+  </ion-list>
+  <ion-button (click)="presentPromptAdd()"expand="full" color="secondary" icon-start>
+    <ion-icon name="add" ></ion-icon>
+    เพิ่มข่าวประชาสัมพันธ์
+  </ion-button>
+</ion-content>
